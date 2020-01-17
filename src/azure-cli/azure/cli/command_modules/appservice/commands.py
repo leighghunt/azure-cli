@@ -41,7 +41,7 @@ def ex_handler_factory(creating_plan=False):
             else:
                 detail = json.loads(ex.response.text)['Message']
                 if creating_plan:
-                    if 'Requested features are not supported in region' in detail:
+                    if 'Requested feature is not supported in region' in detail:
                         detail = ("Plan with linux worker is not supported in current region. For " +
                                   "supported regions, please refer to https://docs.microsoft.com/"
                                   "azure/app-service-web/app-service-linux-intro")
